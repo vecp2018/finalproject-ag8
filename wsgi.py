@@ -15,6 +15,6 @@ if uwsgi:
 else:
     # 表示在近端執行, 以 python3 wsgi.py 執行
     flaskapp.app.run(
-        host='192.168.56.1', port=8443, debug=True,
+        host='192.168.1.49', port=8443, debug=True,
         ssl_context=context
     )
