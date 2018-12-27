@@ -1,0 +1,1291 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Python-Course</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+
+        <!-- for cnc -->
+        <link rel="stylesheet" type="text/css" href="./../static/cnc/bootstrap.min.css" />
+      <style>
+
+    .pane {
+      background-color: #f0f0f0;
+      border: 1px solid #d0d0d0;
+      margin-top: 20px;
+    }
+    .left10px {
+      padding-left: 10px;
+    }
+
+    .top10px {
+      padding-top: 10px;
+    }
+
+    .options {
+      border-bottom: 1px solid #a0a0a0;
+      padding-bottom:20px;
+      background: #a0a0a0;
+    }
+
+    .options .pane {
+      border: 1px solid #f0f0f0;
+    }
+  </style>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations -->
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
+
+<script src="./../static/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+</script>
+
+</head><header><h1>2018 Fall vecp ag8 期末分組網站</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><li><a href='W9.html'>W9</a><li><a href='W10.html'>W10</a><li><a href='W11.html'>W11</a><li><a href='W12.html'>W12</a><li><a href='W13.html'>W13</a><li><a href='W14.html'>W14</a><li><a href='Python 安裝.html'>Python 安裝</a><li><a href='電腦硬體.html'>電腦硬體</a><li><a href='Python 語法.html'>Python 語法</a><li><a href='Math.html'>Math</a><li><a href='STL.html'>STL</a><li><a href='CNC.html'>CNC</a><li><a href='Brython.html'>Brython</a><ul><li><a href='Ggame.html'>Ggame</a><li><a href='GCS.html'>GCS</a><li><a href='Optimization.html'>Optimization</a></li></ul><li><a href='網際內容管理.html'>網際內容管理</a><li><a href='參考資料.html'>參考資料</a><li><a href='電子書.html'>電子書</a></li></ul></nav><section>Math << <a href='Math.html'>Previous</a> <a href='CNC.html'>Next</a> >> CNC<br /><h1>STL</h1>
+<p><a href="./../downloads/STL.pdf">stl.pdf</a></p>
+<p>Library to make reading, writing and modifying both binary and ascii STL files easy. </p>
+<p><a href="https://pypi.org/project/numpy-stl/">https://pypi.org/project/numpy-stl/</a> </p>
+<p>原始碼: <a href="https://github.com/WoLpH/numpy-stl">https://github.com/WoLpH/numpy-stl</a> </p>
+<p>手冊: <a href="https://numpy-stl.readthedocs.io/en/latest/">https://numpy-stl.readthedocs.io/en/latest/</a> </p>
+<p>作者網誌: <a href="https://w.wol.ph/">https://w.wol.ph/</a> </p>
+<h4>範例</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from stl import mesh
+from mpl_toolkits import mplot3d
+from matplotlib import pyplot
+
+# Create a new plot
+figure = pyplot.figure()
+axes = mplot3d.Axes3D(figure)
+
+# Load the STL files and add the vectors to the plot
+your_mesh = mesh.Mesh.from_file('tests/stl_binary/HalfDonut.stl')
+axes.add_collection3d(mplot3d.art3d.Poly3DCollection(your_mesh.vectors))
+
+# Auto scale to the mesh size
+scale = your_mesh.points.flatten(-1)
+axes.auto_scale_xyz(scale, scale, scale)
+
+# Show the plot to the screen
+pyplot.show()</pre>
+<p>列出 STL 零件檔案尺寸</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Python script to find STL dimensions
+# Requrements: sudo pip install numpy-stl
+
+import math
+import stl
+from stl import mesh
+import numpy
+
+import os
+import sys
+
+if len(sys.argv) &lt; 2:
+    sys.exit('Usage: %s [stl file]' % sys.argv[0])
+
+if not os.path.exists(sys.argv[1]):
+    sys.exit('ERROR: file %s was not found!' % sys.argv[1])
+
+# this stolen from numpy-stl documentation
+# https://pypi.python.org/pypi/numpy-stl
+
+# find the max dimensions, so we can know the bounding box, getting the height,
+# width, length (because these are the step size)...
+def find_mins_maxs(obj):
+    minx = maxx = miny = maxy = minz = maxz = None
+    for p in obj.points:
+        # p contains (x, y, z)
+        if minx is None:
+            minx = p[stl.Dimension.X]
+            maxx = p[stl.Dimension.X]
+            miny = p[stl.Dimension.Y]
+            maxy = p[stl.Dimension.Y]
+            minz = p[stl.Dimension.Z]
+            maxz = p[stl.Dimension.Z]
+        else:
+            maxx = max(p[stl.Dimension.X], maxx)
+            minx = min(p[stl.Dimension.X], minx)
+            maxy = max(p[stl.Dimension.Y], maxy)
+            miny = min(p[stl.Dimension.Y], miny)
+            maxz = max(p[stl.Dimension.Z], maxz)
+            minz = min(p[stl.Dimension.Z], minz)
+    return minx, maxx, miny, maxy, minz, maxz
+
+main_body = mesh.Mesh.from_file(sys.argv[1])
+
+minx, maxx, miny, maxy, minz, maxz = find_mins_maxs(main_body)
+
+# the logic is easy from there
+
+print("File:", sys.argv[1])
+print("X:", maxx - minx)
+print("Y:", maxy - miny)
+print("Z:", maxz - minz)</pre>
+<h4>相關工具</h4>
+<p>相關工具: <a href="https://github.com/WoLpH/python-utils">https://github.com/WoLpH/python-utils</a> </p>
+<p>手冊: <a href="https://python-utils.readthedocs.io/en/latest/">https://python-utils.readthedocs.io/en/latest/</a> </p>
+<h4>其他參考資料</h4>
+<p><a href="https://github.com/apparentlymart/python-stl">https://github.com/apparentlymart/python-stl</a> </p>
+<p>python-stl 內容</p>
+<p>__init__.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import stl.ascii
+import stl.binary
+
+from stl.types import Solid, Facet, Vector3d
+
+
+def read_ascii_file(file):
+    """
+    Read an STL file in the *ASCII* format.
+
+    Takes a :py:class:`file`-like object (supporting a ``read`` method)
+    and returns a :py:class:`stl.Solid` object representing the data
+    from the file.
+
+    If the file is invalid in any way, raises
+    :py:class:`stl.ascii.SyntaxError`.
+    """
+    return stl.ascii.parse(file)
+
+
+def read_binary_file(file):
+    """
+    Read an STL file in the *binary* format.
+
+    Takes a :py:class:`file`-like object (supporting a ``read`` method)
+    and returns a :py:class:`stl.Solid` object representing the data
+    from the file.
+
+    If the file is invalid in any way, raises
+    :py:class:`stl.binary.FormatError`.
+    """
+    return stl.binary.parse(file)
+
+
+def read_ascii_string(data):
+    """
+    Read geometry from a :py:class:`str` containing data in the STL *ASCII*
+    format.
+
+    This is just a wrapper around :py:func:`read_ascii_file` that first wraps
+    the provided string in a :py:class:`StringIO.StringIO` object.
+    """
+    from StringIO import StringIO
+    return parse_ascii_file(StringIO(data))
+
+
+def read_binary_string(data):
+    """
+    Read geometry from a :py:class:`str` containing data in the STL *binary*
+    format.
+
+    This is just a wrapper around :py:func:`read_binary_file` that first wraps
+    the provided string in a :py:class:`StringIO.StringIO` object.
+    """
+    from StringIO import StringIO
+    return parse_binary_file(StringIO(data))</pre>
+<p>ascii.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from stl.types import *
+
+
+class KeywordToken(str):
+    pass
+
+
+class NumberToken(float):
+    pass
+
+
+def _token_type_name(token_type):
+    NoneType = type(None)
+    if token_type is NoneType:
+        return 'end of file'
+    elif token_type is KeywordToken:
+        return 'keyword'
+    elif token_type is NumberToken:
+        return 'number'
+    else:
+        return 'unknown'
+
+
+class Scanner(object):
+
+    def __init__(self, file):
+        self.file = file
+        self.peeked = None
+        self.peeked_byte = None
+        self.peeked_col = 0
+        self.peeked_row = 1
+
+    def peek_byte(self):
+        if self.peeked_byte is None:
+            self.peeked_byte = self.file.read(1)
+            if self.peeked_byte == '\n':
+                self.peeked_row += 1
+                self.peeked_col = 0
+            else:
+                self.peeked_col += 1
+
+        return self.peeked_byte
+
+    def get_byte(self):
+        byte = self.peek_byte()
+        self.peeked_byte = None
+        return byte
+
+    def peek_token(self):
+        while self.peeked is None:
+            b = self.peek_byte()
+            self.token_start_row = self.peeked_row
+            self.token_start_col = self.peeked_col
+
+            if b == '':
+                return None
+            elif b.isalpha() or b == '_':
+                self.peeked = self._read_keyword()
+            elif b.isdigit() or b == '.' or b == '-':
+                self.peeked = self._read_number()
+            elif b.isspace():
+                # Just skip over spaces
+                self.get_byte()
+                continue
+            else:
+                raise SyntaxError(
+                    "Invalid character %r at line %i, column %i" % (
+                        b, self.peeked_row, self.peeked_col
+                    )
+                )
+
+        return self.peeked
+
+    def get_token(self):
+        token = self.peek_token()
+        self.peeked = None
+        return token
+
+    def require_token(self, token_type, required_value=None):
+        token = self.get_token()
+        if isinstance(token, token_type):
+            if required_value is None or token == required_value:
+                return token
+            else:
+                got_token_type = _token_type_name(type(token))
+                expected_token_type = _token_type_name(token_type)
+                raise SyntaxError(
+                    "Expected %s %r but got %s %r at line %i, column %i" % (
+                        expected_token_type,
+                        required_value,
+                        got_token_type,
+                        token,
+                        self.token_start_row,
+                        self.token_start_col,
+                    )
+                )
+        else:
+            got_token_type = _token_type_name(type(token))
+            expected_token_type = _token_type_name(token_type)
+            raise SyntaxError(
+                "Expected %s but got %s at line %i, column %i" % (
+                    expected_token_type,
+                    got_token_type,
+                    self.token_start_row,
+                    self.token_start_col,
+                )
+            )
+
+    def _read_keyword(self):
+        ret_bytes = []
+        start_row = self.peeked_row
+        start_col = self.peeked_col
+        while True:
+            b = self.peek_byte()
+            if b.isalpha() or b == '_' or b.isdigit():
+                ret_bytes.append(self.get_byte())
+            else:
+                break
+
+        ret = KeywordToken(''.join(ret_bytes))
+
+        ret.start_row = start_row
+        ret.start_col = start_col
+
+        return ret
+
+    def _read_number(self):
+        ret_bytes = []
+        start_row = self.peeked_row
+        start_col = self.peeked_col
+        while True:
+            b = self.peek_byte()
+            if b.isdigit() or b in ('.', '+', '-', 'e', 'E'):
+                ret_bytes.append(self.get_byte())
+            else:
+                break
+
+        try:
+            ret = NumberToken(''.join(ret_bytes))
+        except ValueError:
+            raise SyntaxError(
+                "Invalid float number at line %i, column %i" % (
+                    start_row, start_col,
+                )
+            )
+
+        ret.start_row = start_row
+        ret.start_col = start_col
+
+        return ret
+
+
+class SyntaxError(ValueError):
+    pass
+
+
+def parse(file):
+    scanner = Scanner(file)
+
+    scanner.require_token(KeywordToken, "solid")
+    name = str(scanner.require_token(KeywordToken))
+
+    ret = Solid(name=name)
+
+    def parse_facet():
+        scanner.require_token(KeywordToken, "facet")
+        scanner.require_token(KeywordToken, "normal")
+        normal_x = scanner.require_token(NumberToken)
+        normal_y = scanner.require_token(NumberToken)
+        normal_z = scanner.require_token(NumberToken)
+        normal = Vector3d(
+            x=normal_x,
+            y=normal_y,
+            z=normal_z,
+        )
+
+        scanner.require_token(KeywordToken, "outer")
+        scanner.require_token(KeywordToken, "loop")
+        vertices = []
+        for i in xrange(0, 3):
+            scanner.require_token(KeywordToken, "vertex")
+            vertex_x = scanner.require_token(NumberToken)
+            vertex_y = scanner.require_token(NumberToken)
+            vertex_z = scanner.require_token(NumberToken)
+            vertices.append(
+                Vector3d(
+                    x=vertex_x,
+                    y=vertex_y,
+                    z=vertex_z,
+                )
+            )
+
+        ret = Facet(
+            normal=normal,
+            vertices=vertices,
+        )
+
+        scanner.require_token(KeywordToken, "endloop")
+        scanner.require_token(KeywordToken, "endfacet")
+
+        return ret
+
+    while True:
+        token = scanner.peek_token()
+        token_type = type(token)
+
+        if token_type is KeywordToken and token == 'endsolid':
+            break
+        elif token_type is KeywordToken and token == 'facet':
+            facet = parse_facet()
+            ret.facets.append(facet)
+        else:
+            got_token_type = _token_type_name(token_type)
+            expected_token_type = _token_type_name(token_type)
+            raise SyntaxError(
+                "Unexpected %s %r at line %i, column %i" % (
+                    got_token_type,
+                    token,
+                    token.start_row,
+                    token.start_col,
+                )
+            )
+
+    scanner.require_token(KeywordToken, "endsolid")
+    end_name = str(scanner.require_token(KeywordToken))
+    if name != end_name:
+        raise SyntaxError(
+            "Solid started named %r but ended named %r" % (
+                name, end_name,
+            )
+        )
+
+    return ret
+
+
+def write(solid, file):
+    name = solid.name
+    if name is None:
+        name = "unnamed"
+
+    file.write(("solid %s\n" % name).encode())
+    for facet in solid.facets:
+        file.write(("  facet normal %g %g %g\n" % facet.normal).encode())
+        file.write(b"    outer loop\n")
+        for vertex in facet.vertices:
+            file.write(("      vertex %g %g %g\n" % vertex).encode())
+        file.write(b"    endloop\n")
+        file.write(b"  endfacet\n")
+    file.write(("endsolid %s\n" % name).encode())</pre>
+<p>binary.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import struct
+from stl.types import *
+
+
+class Reader(object):
+
+    def __init__(self, file):
+        self.file = file
+        self.offset = 0
+
+    def read_bytes(self, byte_count):
+        bytes = self.file.read(byte_count)
+        if len(bytes) &lt; byte_count:
+            raise FormatError(
+                "Unexpected end of file at offset %i" % (
+                    self.offset + len(bytes),
+                )
+            )
+        self.offset += byte_count
+        return bytes
+
+    def read_uint32(self):
+        bytes = self.read_bytes(4)
+        return struct.unpack('&lt;I', bytes)[0]
+
+    def read_uint16(self):
+        bytes = self.read_bytes(2)
+        return struct.unpack('&lt;H', bytes)[0]
+
+    def read_float(self):
+        bytes = self.read_bytes(4)
+        return struct.unpack('&lt;f', bytes)[0]
+
+    def read_vector3d(self):
+        x = self.read_float()
+        y = self.read_float()
+        z = self.read_float()
+        return Vector3d(x, y, z)
+
+    def read_header(self):
+        bytes = self.read_bytes(80)
+        return struct.unpack('80s', bytes)[0].strip('\0')
+
+
+class FormatError(ValueError):
+    pass
+
+
+def parse(file):
+    r = Reader(file)
+
+    name = r.read_header()[6:]
+
+    ret = Solid(name=name)
+
+    num_facets = r.read_uint32()
+
+    for i in xrange(0, num_facets):
+        normal = r.read_vector3d()
+        vertices = tuple(
+            r.read_vector3d() for j in xrange(0, 3)
+        )
+
+        attr_byte_count = r.read_uint16()
+        if attr_byte_count &gt; 0:
+            # The attribute bytes are not standardized, but some software
+            # encodes additional information here. We return the raw bytes
+            # to allow the caller to potentially do something with them if
+            # the format for a particular file is known.
+            attr_bytes = r.read_bytes(attr_byte_count)
+        else:
+            attr_bytes = None
+
+        ret.add_facet(
+            normal=normal,
+            vertices=vertices,
+            attributes=attr_bytes,
+        )
+
+    return ret
+
+
+def write(solid, file):
+    # Empty header
+    file.write(b'\0' * 80)
+
+    # Number of facets
+    file.write(struct.pack('&lt;I', len(solid.facets)))
+
+    for facet in solid.facets:
+        file.write(struct.pack('&lt;3f', *facet.normal))
+        for vertex in facet.vertices:
+            file.write(struct.pack('&lt;3f', *vertex))
+        file.write(b'\0\0')  # no attribute bytes</pre>
+<p>types.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
+
+
+class Solid(object):
+    """
+    A solid object; the root element of an STL file.
+    """
+
+    #: The name given to the object by the STL file header.
+    name = None
+
+    #: :py:class:`list` of :py:class:`stl.Facet` objects representing the
+    #: facets (triangles) that make up the exterior surface of this object.
+    facets = []
+
+    def __init__(self, name=None, facets=None):
+        self.name = name
+        self.facets = facets if facets is not None else []
+
+    def add_facet(self, *args, **kwargs):
+        """
+        Append a new facet to the object. Takes the same arguments as the
+        :py:class:`stl.Facet` type.
+        """
+        self.facets.append(Facet(*args, **kwargs))
+
+    @property
+    def surface_area(self):
+        """
+        The sum of the areas of all facets in the object.
+        """
+        return reduce(
+            lambda accum, facet: accum + facet.area,
+            self.facets,
+            0.0,
+        )
+
+    def write_binary(self, file):
+        """
+        Write this object to a file in STL *binary* format.
+
+        ``file`` must be a file-like object (supporting a ``write`` method),
+        to which the data will be written.
+        """
+        from stl.binary import write
+        write(self, file)
+
+    def write_ascii(self, file):
+        """
+        Write this object to a file in STL *ascii* format.
+
+        ``file`` must be a file-like object (supporting a ``write`` method),
+        to which the data will be written.
+        """
+        from stl.ascii import write
+        write(self, file)
+
+    def __eq__(self, other):
+        if type(other) is Solid:
+            if self.name != other.name:
+                return False
+            if len(self.facets) != len(other.facets):
+                return False
+            for i, self_facet in enumerate(self.facets):
+                if self_facet != other.facets[i]:
+                    return False
+            return True
+        else:
+            return False
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __repr__(self):
+        return '&lt;stl.types.Solid name=%r, facets=%r&gt;' % (
+            self.name,
+            self.facets,
+        )
+
+
+class Facet(object):
+    """
+    A facet (triangle) from a :py:class:`stl.Solid`.
+    """
+
+    #: Raw binary attribute bytes. According to the STL spec these are unused
+    #: and thus this should always be empty, but some modeling software
+    #: encodes non-standard data in here which callers may wish to access.
+    #:
+    #: At present these attribute bytes are populated only when reading binary
+    #: STL files (since ASCII STL files have no place for this data) *and*
+    #: they are ignored when *writing* a binary STL file, so round-tripping
+    #: a file through this library will lose the non-standard attribute data.
+    attributes = None
+
+    #: The 'normal' vector of the facet, as a :py:class:`stl.Vector3d`.
+    normal = None
+
+    #: 3-element sequence of :py:class:`stl.Vector3d` representing the
+    #: facet's three vertices, in order.
+    vertices = None
+
+    def __init__(self, normal, vertices, attributes=None):
+        self.normal = Vector3d(*normal)
+        self.vertices = tuple(
+            Vector3d(*x) for x in vertices
+        )
+
+        if len(self.vertices) != 3:
+            raise ValueError('Must pass exactly three vertices')
+
+    def __eq__(self, other):
+        if type(other) is Facet:
+            return (
+                self.normal == other.normal and
+                self.vertices == other.vertices
+            )
+        else:
+            return False
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __repr__(self):
+        return '&lt;stl.types.Facet normal=%r, vertices=%r, area=%r&gt;' % (
+            self.normal,
+            self.vertices,
+            self.area,
+        )
+
+    @property
+    def a(self):
+        """
+        The length the side of the facet between vertices[0] and vertices[1]
+        """
+        return abs(
+            math.sqrt(
+                pow((self.vertices[0].x - self.vertices[1].x), 2) +
+                pow((self.vertices[0].y - self.vertices[1].y), 2) +
+                pow((self.vertices[0].z - self.vertices[1].z), 2)
+            )
+        )
+
+    @property
+    def b(self):
+        """
+        The length of the side of the facet between vertices[0] and vertices[2]
+        """
+        return abs(
+            math.sqrt(
+                pow((self.vertices[0].x - self.vertices[2].x), 2) +
+                pow((self.vertices[0].y - self.vertices[2].y), 2) +
+                pow((self.vertices[0].z - self.vertices[2].z), 2)
+            )
+        )
+
+    @property
+    def c(self):
+        """
+        The length of the side of the facet between vertices[1] and vertices[2]
+        """
+        return abs(
+            math.sqrt(
+                pow((self.vertices[1].x - self.vertices[2].x), 2) +
+                pow((self.vertices[1].y - self.vertices[2].y), 2) +
+                pow((self.vertices[1].z - self.vertices[2].z), 2)
+            )
+        )
+
+    @property
+    def perimeter(self):
+        """
+        The length of the perimeter of the facet.
+        """
+        return self.a + self.b + self.c
+
+    @property
+    def area(self):
+        """
+        The surface area of the facet, as computed by Heron's Formula.
+        """
+        p = self.perimeter / 2.0
+        return abs(math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c)))
+
+
+class Vector3d(tuple):
+    """
+    Three-dimensional vector.
+
+    Used to represent both normals and vertices of :py:class:`stl.Facet`
+    objects.
+
+    This is a subtype of :py:class:`tuple`, so can also be treated like a
+    three-element tuple in (``x``, ``y``, ``z``) order.
+    """
+
+    def __new__(cls, x, y, z):
+        return tuple.__new__(cls, (x, y, z))
+
+    def __init__(self, x, y, z):
+        pass
+
+    @property
+    def x(self):
+        """
+        The X value of the vector, which most applications interpret
+        as the left-right axis.
+        """
+        return self[0]
+
+    @x.setter
+    def x(self, value):
+        self[0] = value
+
+    @property
+    def y(self):
+        """
+        The Y value of the vector, which most applications interpret
+        as the in-out axis.
+        """
+        return self[1]
+
+    @y.setter
+    def y(self, value):
+        self[1] = value
+
+    @property
+    def z(self):
+        """
+        The Z value of the vector, which most applications interpret
+        as the up-down axis.
+        """
+        return self[2]
+
+    @z.setter
+    def z(self, value):
+        self[2] = value</pre>
+<p>test_types.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import unittest
+from stl.types import *
+
+
+class TestTypes(unittest.TestCase):
+
+    def test_facet_geometry(self):
+        facet = Facet(
+            (1, 0, 0),
+            [
+                (0, 0, 0),
+                (1, 0, 0),
+                (0, 1, 0),
+            ],
+        )
+        self.assertEqual(facet.a, 1.0)
+        self.assertEqual(facet.b, 1.0)
+        self.assertAlmostEqual(facet.c, 1.4142135623730951)
+
+        self.assertAlmostEqual(
+            facet.perimeter,
+            1.0 + 1.0 + 1.4142135623730951,
+        )
+
+        self.assertAlmostEqual(facet.area, 0.5)
+
+    def test_solid_geometry(self):
+        solid = Solid(
+            "test",
+            [
+                Facet(
+                    (1, 0, 0),
+                    [
+                        (0, 0, 0),
+                        (1, 0, 0),
+                        (0, 1, 0),
+                    ],
+                ),
+                Facet(
+                    (1, 0, 0),
+                    [
+                        (0, 0, 0),
+                        (1, 0, 0),
+                        (0, 0, 1),
+                    ],
+                ),
+            ],
+        )
+
+        self.assertAlmostEqual(solid.surface_area, 0.5 + 0.5)</pre>
+<p>test_code_style.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import unittest
+import pep8
+import os.path
+
+
+tests_dir = os.path.dirname(__file__)
+modules_dir = os.path.abspath(os.path.join(tests_dir, "..", "stl"))
+
+
+class TestCodeStyle(unittest.TestCase):
+
+    def test_pep8_conformance(self):
+        pep8style = pep8.StyleGuide()
+        result = pep8style.check_files([tests_dir, modules_dir])
+        self.assertEqual(
+            result.total_errors,
+            0,
+            "Found pep8 conformance issues",
+        )</pre>
+<p>test_ascii.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from StringIO import StringIO
+import unittest
+from stl.ascii import *
+
+
+class TestScanner(unittest.TestCase):
+
+    def _scanner_for_str(self, string):
+        return Scanner(StringIO(string))
+
+    def _get_tokens(self, string):
+        scanner = self._scanner_for_str(string)
+        tokens = []
+
+        while True:
+            token = scanner.get_token()
+            if token is not None:
+                tokens.append(token)
+            else:
+                break
+
+        return tokens
+
+    def test_numbers(self):
+        tokens = self._get_tokens("1 0.1 -0.1 1e2\n1.2e2 1.2e-2 1.2e+2 1.2E+2")
+        self.assertEqual(
+            tokens,
+            [
+                1, 0.1, -0.1, 100, 120, 0.012, 120.0, 120.0,
+            ],
+        )
+
+        self.assertEqual(
+            [tokens[1].start_row, tokens[1].start_col],
+            [1, 3],
+        )
+        self.assertEqual(
+            [tokens[5].start_row, tokens[5].start_col],
+            [2, 7],
+        )
+
+        with self.assertRaises(SyntaxError):
+            self._get_tokens("1e1e1")
+
+        with self.assertRaises(SyntaxError):
+            self._get_tokens("1.1.1")
+
+        with self.assertRaises(SyntaxError):
+            self._get_tokens("--2")
+
+    def test_keywords(self):
+        tokens = self._get_tokens("hello world a\nb c _d e_f g2")
+        self.assertEqual(
+            tokens,
+            [
+                'hello', 'world', 'a', 'b', 'c', '_d', 'e_f', 'g2',
+            ],
+        )
+
+        self.assertEqual(
+            [tokens[1].start_row, tokens[1].start_col],
+            [1, 7],
+        )
+        self.assertEqual(
+            [tokens[4].start_row, tokens[4].start_col],
+            [2, 3],
+        )
+
+    def test_spaces(self):
+        tokens = self._get_tokens(" \n\t")
+        self.assertEqual(
+            tokens,
+            [],
+        )
+
+    def test_require_token(self):
+        scanner = self._scanner_for_str("baz")
+        try:
+            scanner.require_token(KeywordToken)
+        except SyntaxError:
+            self.fail('Unexpected SyntaxError')
+
+        scanner = self._scanner_for_str("baz")
+        try:
+            scanner.require_token(KeywordToken, "baz")
+        except SyntaxError:
+            self.fail('Unexpected SyntaxError')
+
+        scanner = self._scanner_for_str("baz")
+        with self.assertRaises(SyntaxError):
+            scanner.require_token(NumberToken)
+
+        scanner = self._scanner_for_str("baz")
+        with self.assertRaises(SyntaxError):
+            scanner.require_token(KeywordToken, "foo")
+
+
+class TestParser(unittest.TestCase):
+
+    def _parse_str(self, string):
+        return parse(StringIO(string))
+
+    def test_empty(self):
+        with self.assertRaises(SyntaxError):
+            self._parse_str('')
+
+    def test_no_facets(self):
+        self.assertEqual(
+            self._parse_str("solid Baz\nendsolid Baz\n"),
+            Solid(name="Baz"),
+        )
+
+    def test_inconsistent_name(self):
+        with self.assertRaises(SyntaxError):
+            self._parse_str("solid Baz\nendsolid Bonk\n")
+
+    def test_facets(self):
+        self.assertEqual(
+            self._parse_str(
+                "solid Baz\n"
+                "  facet normal 1 2 3\n"
+                "    outer loop\n"
+                "      vertex 4 5 6\n"
+                "      vertex 7 8 9\n"
+                "      vertex 10 11 12\n"
+                "    endloop\n"
+                "  endfacet\n"
+                "  facet normal 1.1 2.1 3.1\n"
+                "    outer loop\n"
+                "      vertex 4.1 5.1 6.1\n"
+                "      vertex 7.1 8.1 9.1\n"
+                "      vertex 10.1 11.1 12.1\n"
+                "    endloop\n"
+                "  endfacet\n"
+                "endsolid Baz\n"
+            ),
+            Solid(
+                name="Baz",
+                facets=[
+                    Facet(
+                        normal=Vector3d(1.0, 2.0, 3.0),
+                        vertices=(
+                            Vector3d(4.0, 5.0, 6.0),
+                            Vector3d(7.0, 8.0, 9.0),
+                            Vector3d(10.0, 11.0, 12.0),
+                        ),
+                    ),
+                    Facet(
+                        normal=Vector3d(1.1, 2.1, 3.1),
+                        vertices=(
+                            Vector3d(4.1, 5.1, 6.1),
+                            Vector3d(7.1, 8.1, 9.1),
+                            Vector3d(10.1, 11.1, 12.1),
+                        ),
+                    ),
+                ],
+            ),
+        )
+
+
+class TestWriter(unittest.TestCase):
+
+    def assertResultEqual(self, solid, expected):
+        f = StringIO('')
+        solid.write_ascii(f)
+        self.assertEqual(
+            f.getvalue(),
+            expected,
+        )
+
+    def test_empty(self):
+        self.assertResultEqual(
+            Solid(),
+            'solid unnamed\n'
+            'endsolid unnamed\n'
+        )
+
+    def test_with_facets(self):
+        self.assertResultEqual(
+            Solid(
+                name='withfacets',
+                facets=[
+                    Facet(
+                        normal=(1, 2, 3),
+                        vertices=[
+                            (4, 5, 6),
+                            (7, 8, 9),
+                            (10, 11, 12),
+                        ],
+                    ),
+                    Facet(
+                        normal=(1.1, 2.1, 3.1),
+                        vertices=[
+                            (4.1, 5.1, 6.1),
+                            (7.1, 8.1, 9.1),
+                            (10.1, 11.1, 12.1),
+                        ],
+                    ),
+                ],
+            ),
+            'solid withfacets\n'
+            '  facet normal 1 2 3\n'
+            '    outer loop\n'
+            '      vertex 4 5 6\n'
+            '      vertex 7 8 9\n'
+            '      vertex 10 11 12\n'
+            '    endloop\n'
+            '  endfacet\n'
+            '  facet normal 1.1 2.1 3.1\n'
+            '    outer loop\n'
+            '      vertex 4.1 5.1 6.1\n'
+            '      vertex 7.1 8.1 9.1\n'
+            '      vertex 10.1 11.1 12.1\n'
+            '    endloop\n'
+            '  endfacet\n'
+            'endsolid withfacets\n'
+        )</pre>
+<p>test_binary.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from StringIO import StringIO
+import unittest
+from stl.binary import *
+
+EMPTY_HEADER = '\0' * 80
+T_HDR = '\x73\x6f\x6c\x69\x64\x20\x54\x65\x73\x74\x66\x69\x6c\x65' + ('\0'*66)
+
+
+class TestParser(unittest.TestCase):
+
+    def _parse_str(self, string):
+        return parse(StringIO(string))
+
+    def test_empty(self):
+        with self.assertRaises(FormatError):
+            self._parse_str('')
+
+    def test_no_facets(self):
+        solid = self._parse_str(
+            T_HDR + '\0\0\0\0'
+        )
+        self.assertEqual(
+            solid,
+            Solid(
+                name='Testfile',
+                facets=[],
+            ),
+        )
+
+    def test_missing_facets(self):
+        with self.assertRaises(FormatError):
+            # Declared that we have two facets but we
+            # actually have none.
+            self._parse_str(
+                T_HDR + '\x02\x00\x00\x00'
+            )
+
+    def test_valid(self):
+        solid = self._parse_str(
+            T_HDR +
+            '\x02\x00\x00\x00'  # two facets
+            # first facet
+            '\x00\x00\x80\x3f'  # normal x = 1.0
+            '\x00\x00\x00\x40'  # normal y = 2.0
+            '\x00\x00\x40\x40'  # normal z = 3.0
+            '\x00\x00\x80\x40'  # vertex x = 4.0
+            '\x00\x00\xa0\x40'  # vertex y = 5.0
+            '\x00\x00\xc0\x40'  # vertex z = 6.0
+            '\x00\x00\xe0\x40'  # vertex x = 7.0
+            '\x00\x00\x00\x41'  # vertex y = 8.0
+            '\x00\x00\x10\x41'  # vertex z = 9.0
+            '\x00\x00\x20\x41'  # vertex x = 10.0
+            '\x00\x00\x30\x41'  # vertex y = 11.0
+            '\x00\x00\x40\x41'  # vertex z = 12.0
+            '\x04\x00'          # four attribute bytes
+            '\x00\x00\x80\x7f'  # dummy attribute bytes (float Infinity)
+            # second facet
+            '\x00\x00\x80\x3f'  # normal x = 1.0
+            '\x00\x00\x80\x3f'  # normal y = 1.0
+            '\x00\x00\x80\x3f'  # normal z = 1.0
+            '\x00\x00\x80\x3f'  # vertex x = 1.0
+            '\x00\x00\x80\x3f'  # vertex y = 1.0
+            '\x00\x00\x80\x3f'  # vertex z = 1.0
+            '\x00\x00\x80\x3f'  # vertex x = 1.0
+            '\x00\x00\x80\x3f'  # vertex y = 1.0
+            '\x00\x00\x80\x3f'  # vertex z = 1.0
+            '\x00\x00\x80\x3f'  # vertex x = 1.0
+            '\x00\x00\x80\x3f'  # vertex y = 1.0
+            '\x00\x00\x80\x3f'  # vertex z = 1.0
+            '\x00\x00'          # no attribute bytes
+        )
+        self.assertEqual(
+            solid,
+            Solid(
+                name='Testfile',
+                facets=[
+                    Facet(
+                        normal=Vector3d(1.0, 2.0, 3.0),
+                        vertices=(
+                            Vector3d(4.0, 5.0, 6.0),
+                            Vector3d(7.0, 8.0, 9.0),
+                            Vector3d(10.0, 11.0, 12.0),
+                        ),
+                        attributes='\x00\x00\x80\x7f',
+                    ),
+                    Facet(
+                        normal=Vector3d(1.0, 1.0, 1.0),
+                        vertices=(
+                            Vector3d(1.0, 1.0, 1.0),
+                            Vector3d(1.0, 1.0, 1.0),
+                            Vector3d(1.0, 1.0, 1.0),
+                        ),
+                        attributes=None,
+                    ),
+                ],
+            ),
+        )
+
+
+class TestWriter(unittest.TestCase):
+
+    def assertResultEqual(self, solid, expected):
+        f = StringIO('')
+        solid.write_binary(f)
+        self.assertEqual(
+            f.getvalue(),
+            expected,
+        )
+
+    def test_empty(self):
+        self.assertResultEqual(
+            Solid(),
+            EMPTY_HEADER +
+            '\0\0\0\0'
+        )
+
+    def test_with_facets(self):
+        self.assertResultEqual(
+            Solid(
+                name=None,
+                facets=[
+                    Facet(
+                        normal=Vector3d(1.0, 2.0, 3.0),
+                        vertices=(
+                            Vector3d(4.0, 5.0, 6.0),
+                            Vector3d(7.0, 8.0, 9.0),
+                            Vector3d(10.0, 11.0, 12.0),
+                        ),
+                        attributes=None,
+                    ),
+                    Facet(
+                        normal=Vector3d(1.0, 1.0, 1.0),
+                        vertices=(
+                            Vector3d(1.0, 1.0, 1.0),
+                            Vector3d(1.0, 1.0, 1.0),
+                            Vector3d(1.0, 1.0, 1.0),
+                        ),
+                        attributes=None,
+                    ),
+                ],
+            ),
+            EMPTY_HEADER +
+            '\x02\x00\x00\x00'  # two facets
+            # first facet
+            '\x00\x00\x80\x3f'  # normal x = 1.0
+            '\x00\x00\x00\x40'  # normal y = 2.0
+            '\x00\x00\x40\x40'  # normal z = 3.0
+            '\x00\x00\x80\x40'  # vertex x = 4.0
+            '\x00\x00\xa0\x40'  # vertex y = 5.0
+            '\x00\x00\xc0\x40'  # vertex z = 6.0
+            '\x00\x00\xe0\x40'  # vertex x = 7.0
+            '\x00\x00\x00\x41'  # vertex y = 8.0
+            '\x00\x00\x10\x41'  # vertex z = 9.0
+            '\x00\x00\x20\x41'  # vertex x = 10.0
+            '\x00\x00\x30\x41'  # vertex y = 11.0
+            '\x00\x00\x40\x41'  # vertex z = 12.0
+            '\x00\x00'          # no attribute bytes
+            # second facet
+            '\x00\x00\x80\x3f'  # normal x = 1.0
+            '\x00\x00\x80\x3f'  # normal y = 1.0
+            '\x00\x00\x80\x3f'  # normal z = 1.0
+            '\x00\x00\x80\x3f'  # vertex x = 1.0
+            '\x00\x00\x80\x3f'  # vertex y = 1.0
+            '\x00\x00\x80\x3f'  # vertex z = 1.0
+            '\x00\x00\x80\x3f'  # vertex x = 1.0
+            '\x00\x00\x80\x3f'  # vertex y = 1.0
+            '\x00\x00\x80\x3f'  # vertex z = 1.0
+            '\x00\x00\x80\x3f'  # vertex x = 1.0
+            '\x00\x00\x80\x3f'  # vertex y = 1.0
+            '\x00\x00\x80\x3f'  # vertex z = 1.0
+            '\x00\x00'          # no attribute bytes
+        )</pre>
+<p></p><br />Math << <a href='Math.html'>Previous</a> <a href='CNC.html'>Next</a> >> CNC</section></div></body></html>

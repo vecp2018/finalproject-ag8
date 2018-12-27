@@ -1,0 +1,153 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Python-Course</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+
+        <!-- for cnc -->
+        <link rel="stylesheet" type="text/css" href="./../static/cnc/bootstrap.min.css" />
+      <style>
+
+    .pane {
+      background-color: #f0f0f0;
+      border: 1px solid #d0d0d0;
+      margin-top: 20px;
+    }
+    .left10px {
+      padding-left: 10px;
+    }
+
+    .top10px {
+      padding-top: 10px;
+    }
+
+    .options {
+      border-bottom: 1px solid #a0a0a0;
+      padding-bottom:20px;
+      background: #a0a0a0;
+    }
+
+    .options .pane {
+      border: 1px solid #f0f0f0;
+    }
+  </style>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations -->
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
+
+<script src="./../static/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+</script>
+
+</head><header><h1>2018 Fall vecp ag8 期末分組網站</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><li><a href='W9.html'>W9</a><li><a href='W10.html'>W10</a><li><a href='W11.html'>W11</a><li><a href='W12.html'>W12</a><li><a href='W13.html'>W13</a><li><a href='W14.html'>W14</a><li><a href='Python 安裝.html'>Python 安裝</a><li><a href='電腦硬體.html'>電腦硬體</a><li><a href='Python 語法.html'>Python 語法</a><li><a href='Math.html'>Math</a><li><a href='STL.html'>STL</a><li><a href='CNC.html'>CNC</a><li><a href='Brython.html'>Brython</a><ul><li><a href='Ggame.html'>Ggame</a><li><a href='GCS.html'>GCS</a><li><a href='Optimization.html'>Optimization</a></li></ul><li><a href='網際內容管理.html'>網際內容管理</a><li><a href='參考資料.html'>參考資料</a><li><a href='電子書.html'>電子書</a></li></ul></nav><section>Python 語法 << <a href='Python 語法.html'>Previous</a> <a href='STL.html'>Next</a> >> STL<br /><h1>Math</h1>
+<h4>Basic algebra concept (代數)</h4>
+<p><a href="https://www.ck12.org/book/CK-12-Basic-Algebra-Concepts/">https://www.ck12.org/book/CK-12-Basic-Algebra-Concepts/</a>  (K-12 教材)</p>
+<p>數學教材: <a href="https://openstax.org/subjects/math">https://openstax.org/subjects/math</a> </p>
+<p>Pre algebra: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/Prealgebra-OP_7D9i20P.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/Prealgebra-OP_7D9i20P.pdf</a> </p>
+<p>Elementary algebra: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/ElementaryAlgebra-OP_71KfFB6.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/ElementaryAlgebra-OP_71KfFB6.pdf</a> </p>
+<p>Intermedia algebra: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/IntermediateAlgebra-OP_dzG9dw4.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/IntermediateAlgebra-OP_dzG9dw4.pdf</a> </p>
+<p>Algebra and trigonometry: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_hyusk2X.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/AlgebraAndTrigonometry-OP_hyusk2X.pdf</a> </p>
+<p>Colege algebra: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CollegeAlgebra-OP_s3hAxEt.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CollegeAlgebra-OP_s3hAxEt.pdf</a> </p>
+<p>Calculus Vol. 1: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf</a> </p>
+<p>Calculus Vol. 2: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume2-OP_7nNwGJD.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume2-OP_7nNwGJD.pdf</a></p>
+<p>Calculus Vol. 3: <a href="https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume3-OP.pdf">https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume3-OP.pdf</a> </p>
+<h4>數學與電腦程式相同, 都是溝通用的語言</h4>
+<p>語言的學習, 只有開始, 沒有結束, 必須終身學習</p>
+<p>Math, like English, French, Spanish (西班牙語), or Arabic (阿拉伯語), is a second language that you must learn in order to be successful. There are verbs (動詞) and nouns (名詞)  in math, just like in any other language. In order to understand math, you must practice the language.</p>
+<p>A verb is a “doing” word, such as running, jumping, or driving. In mathematics, verbs are also “doing” words. A math verb is called an operation (運算). Operations can be something you have used before, such as addition (加法), multiplication (乘法), subtraction (減法), or division (除法). They can also be much more complex like an exponent (指數) or square root (平方根). </p>
+<p>A noun is usually described as a person, place, or thing. In mathematics, nouns are called numbers and variables (變數). A variable is a symbol, usually an English letter, written to replace an unknown or changing quantity.</p>
+<p>An algebraic expression (代數表達式) is a mathematical phrase combining numbers and/or variables using mathematical operations. First we need to choose a variable for this unknown number. The letter n is a common choice, so we'll use that. To write the expression, first express 5 times the number by</p>
+<p>5(n).</p>
+<p>Now we need to express "2 more" than 5(n) Two more means that we should add two.</p>
+<p>5(n)+2.</p>
+<p>Exponent (指數): Exponents are used to describe the number of times that a term is multiplied by itself.</p>
+<p>Operation (運算): Operations are actions performed on variables, constants, or expressions. Common operations are addition, subtraction, multiplication, and division.</p>
+<p>Square root (平方根): The square root of a term is a value that must be multiplied by itself to equal the specified term. The square root of 9 is 3, since 3 * 3 = 9.</p>
+<p>algebraic (代數的): The word algebraic indicates that a given expression or equation includes variables.</p>
+<p>The order of operations (運算次序) specifies the order in which to perform each of multiple operations in an expression or equation. The order of operations is: P - parentheses, E - exponents, M/D - multiplication and division in order from left to right, A/S - addition and subtraction in order from left to right.</p>
+<p>Some math verbs are “stronger” than others and must be done first. This method is known as the order of operations.</p>
+<p>Whatever is found inside PARENTHESES must be done first. EXPONENTS are to be simplified next. MULTIPLICATION and DIVISION are equally important and must be performed moving left to right. ADDITION and SUBTRACTION are also equally important and must be performed moving left to right.</p>
+<p>Parentheses (括號) "(" and ")" are used in algebraic expressions as grouping symbols.</p>
+<p>Brackets [ ], are symbols that are used to group numbers in mathematics. Brackets are the 'second level' of grouping symbols, used to enclose items already in parentheses.</p>
+<p>Grouping symbols are parentheses or brackets used to group numbers and operations.</p>
+<p>A real number is a number that can be plotted on a number line. Real numbers include all rational and irrational numbers.</p>
+<p>In algebra, to substitute (代換) means to replace a variable or term with a specific value.</p>
+<p>A fraction is a part of a whole. A fraction is written mathematically as one value on top of another, separated by a fraction bar. It is also called a rational number.</p>
+<p>A fraction bar is a line used to divide the numerator and the denominator of a fraction. The fraction bar means division.</p>
+<p>Volume is the amount of space inside the bounds of a three-dimensional object.</p>
+<p>expressions  表達式</p>
+<p>equations 方程式: An equation is a mathematical sentence that describes two equal quantities. Equations contain equals signs.</p>
+<p>functions 函式:  Functions are methods of explaining relationships and can be represented as a rule, a graph, a table, or in words.</p>
+<p>The range of a function is the set of  values for which the function is defined.</p>
+<p>The vertical axis is also referred to as the -axis of a coordinate graph. By convention, we graph the output variable on the -axis.</p>
+<p>variable (變數): A variable is a symbol used to represent an unknown or changing quantity. The most common variables are a, b, x, y, m, and n.</p>
+<p>Careers such as automobile accident investigators, quality control engineers, and insurance originators use equations to determine the value of variables.</p>
+<p>The amount of money in a savings account, how many miles run in a year, or the number of trout in a pond are all described using functions.</p>
+<p>choose the best variables to describe a situation, simplify an expression using the Order of Operations, describe functions in various ways, write equations, and solve problems using a systematic approach.</p>
+<p>basic algebra concepts, such as properties of exponents, multiplying and factoring<br/>polynomials, equation solving, and applied problems.</p>
+<p>graphs, slope, equations of lines, and functions, regression</p>
+<p>The greater-than-or-equal-to symbol "$\ge$" indicates that the value on the left side of the symbol is greater than or equal to the value on the right.</p>
+<p>The less-than-or-equal-to symbol "$\le$" indicates that the value on the left side of the symbol is lesser than or equal to the value on the right.</p>
+<p>The not-equal-to symbol "$\ne$" indicates that the value on the left side of the symbol is not equal to the value on the right.</p><br />Python 語法 << <a href='Python 語法.html'>Previous</a> <a href='STL.html'>Next</a> >> STL</section></div></body></html>
