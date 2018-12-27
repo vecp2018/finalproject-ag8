@@ -17,12 +17,14 @@ SITEURL = '.'
 # 此設定用於近端靜態網頁查驗, 因此使用相對 URL
 RELATIVE_URLS = True
 
-THEME = 'theme/attila'
+#THEME = 'theme/attila'
+THEME = 'theme/pelican-bootstrap3_local'
 BOOTSTRAP_THEME = 'united'
 COLOR_SCHEME_CSS = 'tomorrow_night.css'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+#CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 

@@ -1,12 +1,12 @@
 Title: About
 
-##2018 Fall 分組網誌
+##2018 Fall Python-Course
 
-課程倉儲: <a href="https://github.com/mdecourse/2018fall">https://github.com/mdecourse/2018fall</a>
+倉儲: <a href="https://github.com/mdecourse/python-course">https://github.com/mdecourse/python-course</a>
 
-課程投影片: <a href="https://mdecourse.github.io/2018fall/reveal">https://mdecourse.github.io/2018fall/reveal</a>
+課程投影片: <a href="https://mdecourse.github.io/python-course/reveal/">https://mdecourse.github.io/python-course/reveal/</a>
 
-課程網誌: <a href="https://mdecourse.github.io/2018fall/blog">https://mdecourse.github.io/2018fall/blog</a>
+課程網誌: <a href="https://mdecourse.github.io/python-course/blog/">https://mdecourse.github.io/python-course/blog/</a>
 
 
 
