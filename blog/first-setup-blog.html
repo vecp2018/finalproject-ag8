@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>軟硬體設置 - 機械設計工程系 Python-Course</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--
+-->
+
+<!-- for LaTeX equations -->
+<script src="./../data/math/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+
+<link rel="canonical" href="https://mdecourse.github.io/python-course/blog/first-setup-blog.html">
+
+        <meta name="author" content="kmol" />
+        <meta name="keywords" content="Github,Bitbucket,Fossil SCM,Leo Editor,Pelican,Reveal.js" />
+        <meta name="description" content="紀錄電腦與網路的軟硬體相關設置 Github, Bitbucket 與 Fossil SCM Github 目前提供的免費帳號, 允許多人協同提交推送版本, 唯一的限制就是單一檔案不能大於 50 MB. Bitbucket 則允許免費使用非公開的倉儲, 但是至多只允許五個帳號協同. Fossil SCM 則適合在近端或區域網路中使用, 目前 KMOLab 希望在區網中導入作為與 Github Pages 配合的工具, 使用者可以將 Fossil SCM 的 working directory 限縮在 Github 近端倉儲的特定目錄下, 且在 .gitignore 中排除 FOSSIL (under Windows) 的版次管理, 但是相關的 fossil update 與 fossil server 功能仍然必須依照特定的流程進行操作, 以避免兩套版次管理系統內容的不同步導致資料覆蓋流失. github 倉儲與 …" />
+
+        <meta property="og:site_name" content="機械設計工程系 Python-Course" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="軟硬體設置"/>
+        <meta property="og:url" content="https://mdecourse.github.io/python-course/blog/first-setup-blog.html"/>
+        <meta property="og:description" content="紀錄電腦與網路的軟硬體相關設置 Github, Bitbucket 與 Fossil SCM Github 目前提供的免費帳號, 允許多人協同提交推送版本, 唯一的限制就是單一檔案不能大於 50 MB. Bitbucket 則允許免費使用非公開的倉儲, 但是至多只允許五個帳號協同. Fossil SCM 則適合在近端或區域網路中使用, 目前 KMOLab 希望在區網中導入作為與 Github Pages 配合的工具, 使用者可以將 Fossil SCM 的 working directory 限縮在 Github 近端倉儲的特定目錄下, 且在 .gitignore 中排除 FOSSIL (under Windows) 的版次管理, 但是相關的 fossil update 與 fossil server 功能仍然必須依照特定的流程進行操作, 以避免兩套版次管理系統內容的不同步導致資料覆蓋流失. github 倉儲與 …"/>
+        <meta property="article:published_time" content="2017-06-05" />
+            <meta property="article:section" content="Research" />
+            <meta property="article:tag" content="Github" />
+            <meta property="article:tag" content="Bitbucket" />
+            <meta property="article:tag" content="Fossil SCM" />
+            <meta property="article:tag" content="Leo Editor" />
+            <meta property="article:tag" content="Pelican" />
+            <meta property="article:tag" content="Reveal.js" />
+            <meta property="article:author" content="kmol" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://mdecourse.github.io/python-course/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="https://mdecourse.github.io/python-course/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://mdecourse.github.io/python-course/blog/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://mdecourse.github.io/python-course/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://mdecourse.github.io/python-course/blog/theme/css/style.css" type="text/css"/>
+
+        <link href="https://mdecourse.github.io/python-course/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="機械設計工程系 Python-Course ATOM Feed"/>
+
+<!--
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.js"></script>
+-->
+
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+<!-- for table style start -->
+<style>
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+}
+</style>
+<!-- for table style end -->
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://mdecourse.github.io/python-course/blog/" class="navbar-brand">
+機械設計工程系 Python-Course            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://mdecourse.github.io/python-course/blog/category/misc.html">Misc</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://mdecourse.github.io/python-course/blog/category/research.html">Research</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="https://mdecourse.github.io/python-course/blog/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://mdecourse.github.io/python-course/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://mdecourse.github.io/python-course/blog/first-setup-blog.html"
+                       rel="bookmark"
+                       title="Permalink to 軟硬體設置">
+                        軟硬體設置
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-06-05T01:29:00+08:00"> 週一 05 六月 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="https://mdecourse.github.io/python-course/blog/author/kmol.html"><i class="fa fa-user"></i> kmol</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://mdecourse.github.io/python-course/blog/tag/github.html">Github</a>
+        /
+	<a href="https://mdecourse.github.io/python-course/blog/tag/bitbucket.html">Bitbucket</a>
+        /
+	<a href="https://mdecourse.github.io/python-course/blog/tag/fossil-scm.html">Fossil SCM</a>
+        /
+	<a href="https://mdecourse.github.io/python-course/blog/tag/leo-editor.html">Leo Editor</a>
+        /
+	<a href="https://mdecourse.github.io/python-course/blog/tag/pelican.html">Pelican</a>
+        /
+	<a href="https://mdecourse.github.io/python-course/blog/tag/revealjs.html">Reveal.js</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>紀錄電腦與網路的軟硬體相關設置</p>
+
+
+<h2>Github, Bitbucket 與 Fossil SCM</h2>
+<p>Github 目前提供的免費帳號, 允許多人協同提交推送版本, 唯一的限制就是單一檔案不能大於 50 MB.</p>
+<p>Bitbucket 則允許免費使用非公開的倉儲, 但是至多只允許五個帳號協同.</p>
+<p>Fossil SCM 則適合在近端或區域網路中使用, 目前 KMOLab 希望在區網中導入作為與 Github Pages 配合的工具, 使用者可以將 Fossil SCM 的 working directory 限縮在 Github 近端倉儲的特定目錄下, 且在 .gitignore 中排除 <em>FOSSIL</em> (under Windows) 的版次管理, 但是相關的 fossil update 與 fossil server 功能仍然必須依照特定的流程進行操作, 以避免兩套版次管理系統內容的不同步導致資料覆蓋流失.</p>
+<p>github 倉儲與 bitbucket 倉儲, 則可以利用 git remote add 同步.</p>
+<h2>Leo Editor, Pelican 與 Reveal.js</h2>
+<p>Leo Editor 是一套能夠以程式方法有效管理多元資料的文字資料編輯器, 以下就是用來管理 KMOLab Pelican 靜態網誌有關內容的畫面, 其中的 @button local-blog 是用來產生靜態網誌的指令按鈕, @button github-blog 則是用來產生嵌入 Disqus 留言系統的 Github Pages 網誌對應指令, 兩個指令的差別在於使用不同的設定檔案, 使用者可以先利用近端的按鈕, 建立網誌後在近端以另一個 https-server 按鈕建立 https 伺服, 用瀏覽器檢查所產生的網誌內容, 一旦要送到 Github 倉儲, 必須再利用遠端按鈕產生另外一組網誌與搜尋用 .json 檔案後, 再提交推送到倉儲.</p>
+<p>在這個過程中, 使用者依照 Pelican 的特定 Markdown 檔案編寫網誌內容外, Leo Editor 專案檔中也可以放入其他有關的註記與設定檔案編輯用的節點. 若需要在 Pelican 的環境中修改設定, 都可以全部在一個 Leo Editor 專案檔中完成.</p>
+<p><img src="./../data/images/leo_editor_kmolab.png" width="800" /></p>
+<p>Leo Editor 另外一項有用的特定就是能夠利用從屬節點關係與內文指令來表示複雜的 html 檔案, 如下圖所示, 各段落的超文件標註可以利用節點加以切割, 使用者在編寫 reveal.js 投影片時, 可以只集中在特定簡報內容的編寫, 並且透過節點的複製與搬移, 甚至使用 Leo Editor 的節點 clone 功能, 同步相同內容但是同時出現在不同位置的節點.</p>
+<p><img src="./../data/images/reveal_slide_on_leo_editor.png" width="800" /></p>
+<p>Pelican Blog 共用設定檔案:</p>
+<p>pelicanconf.py</p>
+<pre class="brush: python">
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+AUTHOR = 'KMOL'
+SITENAME = 'KMOLab 機械設計工程'
+# 不要用文章所在目錄作為類別
+USE_FOLDER_AS_CATEGORY = False
+
+#PATH = 'content'
+
+#OUTPUT_PATH = 'output'
+
+TIMEZONE = 'Asia/Taipei'
+
+DEFAULT_LANG = 'en'
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+# Blogroll
+LINKS = (('Pelican', 'http://getpelican.com/'),
+         ('pelican-bootstrap3', 'https://github.com/DandyDev/pelican-bootstrap3/'),
+         ('pelican-plugins', 'https://github.com/getpelican/pelican-plugins'),
+         ('Tipue search', 'https://github.com/Tipue/Tipue-Search'),)
+
+# Social widget
+#SOCIAL = (('You can add links in your config file', '#'),('Another social link', '#'),)
+
+DEFAULT_PAGINATION = 10
+
+# Uncomment following line if you want document-relative URLs when developing
+#RELATIVE_URLS = True
+
+# 必須絕對目錄或相對於設定檔案所在目錄
+PLUGIN_PATHS = ['plugin']
+PLUGINS = ['summary', 'tipue_search', 'sitemap']
+
+# for sitemap plugin
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
+
+# search is for Tipue search
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
+
+# for pelican-bootstrap3 theme settings
+#TAG_CLOUD_MAX_ITEMS = 50
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
+TAGS_URL = "tags.html"
+CATEGORIES_URL = "categories.html"
+MENUITEMS = [('About', '/blog/pages/about/')]
+#SHOW_ARTICLE_AUTHOR = True
+
+#MENUITEMS = [('Home', '/'), ('Archives', '/archives.html'), ('Search', '/search.html')]
+</pre>
+
+<p>遠端 publishconf.py</p>
+<pre class="brush: python">
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+# This file is only used if you use `make publish` or
+# explicitly specify it as your config file.
+
+import os
+import sys
+sys.path.append(os.curdir)
+from pelicanconf import *
+
+# 因為 publishconf.py 在 pelicanconf.py 之後, 因此若兩處有相同變數的設定, 將以較後讀入的 publishconf.py 中的設定為主.
+
+# 將所有靜態 html 檔案移到 blog 子目錄
+SITEURL = 'https://kmolab.github.io/blog'
+# 此設定用於將資料送到 gh-pages, 因此使用絕對 URL 設定
+RELATIVE_URLS = False
+# 為了要讓 local 與 gh-pages 上都能夠使用 Tipue search, 可能要採用不同的 theme
+THEME = 'theme/pelican-bootstrap3'
+#BOOTSTRAP_THEME = 'readable'
+#BOOTSTRAP_THEME = 'readable-old'
+BOOTSTRAP_THEME = 'united'
+#PYGMENTS_STYLE = 'paraiso-drak'
+#PYGMENTS_STYLE = 'fruity'
+# 為了同時兼容 render_math, 必須放棄 fruity
+PYGMENTS_STYLE = 'monokai'
+
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+
+DELETE_OUTPUT_DIRECTORY = True
+
+# Following items are often useful when publishing
+
+DISQUS_SITENAME = "kmolabmde"
+#GOOGLE_ANALYTICS = ""
+
+# 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
+DEFAULT_DATE = 'fs'
+
+# 遠端的 code hightlight
+#MD_EXTENSIONS = ['fenced_code', 'extra', 'codehilite(linenums=True)']
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
+# 若要依照日期存檔呼叫
+#ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+#ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+PAGE_URL = 'pages/{slug}/'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+SHOW_ARTICLE_AUTHOR = True
+</pre>
+
+<p>local_publishconf.py</p>
+<pre class="brush: python">
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+# This file is only used if you use `make publish` or
+# explicitly specify it as your config file.
+
+import os
+import sys
+sys.path.append(os.curdir)
+from pelicanconf import *
+
+# 因為 publishconf.py 在 pelicanconf.py 之後, 因此若兩處有相同變數的設定, 將以較後讀入的 publishconf.py 中的設定為主.
+
+# 請注意, 為了在近端讓 Tipue search 傳回的搜尋結果連結正確, 必須使用 ./
+SITEURL = './'
+# 此設定用於近端靜態網頁查驗, 因此使用相對 URL
+RELATIVE_URLS = True
+# 為了要讓 local 與 gh-pages 上都能夠使用 Tipue search, 可能要採用不同的 theme
+THEME = 'theme/pelican-bootstrap3_local'
+#BOOTSTRAP_THEME = 'readable'
+#BOOTSTRAP_THEME = 'readable-old'
+BOOTSTRAP_THEME = 'united'
+#PYGMENTS_STYLE = 'paraiso-drak'
+#PYGMENTS_STYLE = 'fruity'
+# 為了同時兼容 render_math, 必須放棄 fruity
+PYGMENTS_STYLE = 'monokai'
+
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+
+DELETE_OUTPUT_DIRECTORY = True
+
+# Following items are often useful when publishing
+
+#DISQUS_SITENAME = "kmolabmde"
+#GOOGLE_ANALYTICS = ""
+
+# 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
+DEFAULT_DATE = 'fs'
+
+# 近端的 code hightlight
+#MD_EXTENSIONS = ['fenced_code', 'extra', 'codehilite(linenums=True)']
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
+# 若要依照日期存檔呼叫
+#ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+#ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+PAGE_URL = 'pages/{slug}/'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+SHOW_ARTICLE_AUTHOR = True
+</pre>
+
+<h2>區網中的 IPv4 與 IPv6 WWW Server</h2>
+<p>Pelican 在近端產生 weblog 後, 若要在近端以 https 檢視結果, 就必須同時建立 https Server.</p>
+<p>近端 IPv4 WWW 伺服器程式:</p>
+<pre class="brush: python">
+import os
+import subprocess
+import threading
+import http.server, ssl
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    server_address = ('localhost', 5443)
+    httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print(os.getcwd())
+    print("5443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()
+</pre>
+
+<p>近端 IPv6 ＷＷＷ 伺服器程式:</p>
+<pre class="brush: python">
+import os
+import subprocess
+import threading
+import socket
+import http.server, ssl
+
+class HTTPServerV6(http.server.HTTPServer):
+    address_family = socket.AF_INET6
+
+def domake():
+    # build directory
+    os.chdir("./../")
+    ipv6_address = '::1'
+    server_address = (ipv6_address, 6443)
+    #httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd = HTTPServerV6(server_address, http.server.SimpleHTTPRequestHandler)
+    httpd.socket = ssl.wrap_socket(httpd.socket,
+                                   server_side=True,
+                                   certfile='localhost.crt',
+                                   keyfile='localhost.key',
+                                   ssl_version=ssl.PROTOCOL_TLSv1)
+    print("6443 https server started")
+    httpd.serve_forever()
+
+# 利用執行緒執行 https 伺服器
+make = threading.Thread(target=domake)
+make.start()
+</pre>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'mdecp2018'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'first-setup-blog';
+                var disqus_url = 'https://mdecourse.github.io/python-course/blog/first-setup-blog.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/2018-Edit-Blog-Markdown-Online.html">
+                            在 Github 線上編輯網誌
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/Collaborative-Design-Laboratory.html">
+                            協同設計室test
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/first-setup-blog.html">
+                            軟硬體設置
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="https://mdecourse.github.io/python-course/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/category/research.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="https://mdecourse.github.io/python-course/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="https://www.nature.com/" target="_blank">
+                Nature
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.sciencemag.org/" target="_blank">
+                Science
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.samharris.org/" target="_blank">
+                Sam Harris
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.ieu.uzh.ch/wagner/" target="_blank">
+                Andreas Wagner
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.americanscientist.org/" target="_blank">
+                American Scientist
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.scientificamerican.com/" target="_blank">
+                Scientific American
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="https://mdecourse.github.io/python-course/blog/theme/css/lity.css" rel="stylesheet">
+
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'mdecp2018'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

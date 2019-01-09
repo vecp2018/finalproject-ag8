@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>協同設計室test - 機械設計工程系 Python-Course</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--
+-->
+
+<!-- for LaTeX equations -->
+<script src="./../data/math/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+
+<link rel="canonical" href="https://mdecourse.github.io/python-course/blog/Collaborative-Design-Laboratory.html">
+
+        <meta name="author" content="yen" />
+        <meta name="keywords" content="Collaborative Design" />
+        <meta name="description" content="2018 年春天, 在電腦輔助設計室旁一間約十坪大小的空間, 成立了所謂的協同設計室, 希望透過多人協力一同, 解決與電腦及網路軟硬體相關問題. Windows 10 的更新之罪 Windows 10 自推出以來, 每一次的更新都掀起論戰, 連最近的 1803 升級, 也不例外. 許多網站更教導使用者如何阻止 Windows 10 更新, 因為微軟多多少少藉著更新, 強力放送自家相關產品與服務. 儘管這些置入性行銷不怎麼討喜, 但是從 Windows 7 到目前的 Windows 10, 微軟加諸在這一系列產品的用心, 令人印象深刻, 因此在這個階段, 協同設計室反而建議大家照單全收 Windows 10 的各項網路服務, 再過一段時間, 當大家都明確感受到 AI 人工智慧組態設定的貼心之後, 應該對於 Windows 10 緊密透過網路提供的各項置入性行銷, 就不會再有排拒之想了. 如何與還原卡共存 一旦決定與 Windows …" />
+
+        <meta property="og:site_name" content="機械設計工程系 Python-Course" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="協同設計室test"/>
+        <meta property="og:url" content="https://mdecourse.github.io/python-course/blog/Collaborative-Design-Laboratory.html"/>
+        <meta property="og:description" content="2018 年春天, 在電腦輔助設計室旁一間約十坪大小的空間, 成立了所謂的協同設計室, 希望透過多人協力一同, 解決與電腦及網路軟硬體相關問題. Windows 10 的更新之罪 Windows 10 自推出以來, 每一次的更新都掀起論戰, 連最近的 1803 升級, 也不例外. 許多網站更教導使用者如何阻止 Windows 10 更新, 因為微軟多多少少藉著更新, 強力放送自家相關產品與服務. 儘管這些置入性行銷不怎麼討喜, 但是從 Windows 7 到目前的 Windows 10, 微軟加諸在這一系列產品的用心, 令人印象深刻, 因此在這個階段, 協同設計室反而建議大家照單全收 Windows 10 的各項網路服務, 再過一段時間, 當大家都明確感受到 AI 人工智慧組態設定的貼心之後, 應該對於 Windows 10 緊密透過網路提供的各項置入性行銷, 就不會再有排拒之想了. 如何與還原卡共存 一旦決定與 Windows …"/>
+        <meta property="article:published_time" content="2018-05-15" />
+            <meta property="article:section" content="Misc" />
+            <meta property="article:tag" content="Collaborative Design" />
+            <meta property="article:author" content="yen" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://mdecourse.github.io/python-course/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="https://mdecourse.github.io/python-course/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://mdecourse.github.io/python-course/blog/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://mdecourse.github.io/python-course/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://mdecourse.github.io/python-course/blog/theme/css/style.css" type="text/css"/>
+
+        <link href="https://mdecourse.github.io/python-course/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="機械設計工程系 Python-Course ATOM Feed"/>
+
+<!--
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushMakefile.js"></script>
+-->
+
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.min.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushMakefile.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+<!-- for table style start -->
+<style>
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+}
+</style>
+<!-- for table style end -->
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://mdecourse.github.io/python-course/blog/" class="navbar-brand">
+機械設計工程系 Python-Course            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="https://mdecourse.github.io/python-course/blog/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="https://mdecourse.github.io/python-course/blog/category/research.html">Research</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="https://mdecourse.github.io/python-course/blog/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://mdecourse.github.io/python-course/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://mdecourse.github.io/python-course/blog/Collaborative-Design-Laboratory.html"
+                       rel="bookmark"
+                       title="Permalink to 協同設計室test">
+                        協同設計室test
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-05-15T11:00:00+08:00"> 週二 15 五月 2018</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="https://mdecourse.github.io/python-course/blog/author/yen.html"><i class="fa fa-user"></i> yen</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://mdecourse.github.io/python-course/blog/tag/collaborative-design.html">Collaborative Design</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>2018 年春天, 在電腦輔助設計室旁一間約十坪大小的空間, 成立了所謂的協同設計室, 希望透過多人協力一同, 解決與電腦及網路軟硬體相關問題.</p>
+
+
+<h2>Windows 10 的更新之罪</h2>
+<p>Windows 10 自推出以來, 每一次的更新都掀起論戰, 連最近的 1803 升級, 也不<a href="https://www.computerworld.com/article/3232632/microsoft-windows/how-to-block-windows-10-april-2018-update-from-installing.html">例外</a>.</p>
+<p>許多網站更教導使用者如何阻止 Windows 10 更新, 因為微軟多多少少藉著更新, 強力放送自家相關產品與服務.</p>
+<p>儘管這些置入性行銷不怎麼討喜, 但是從 Windows 7 到目前的 Windows 10, 微軟加諸在這一系列產品的用心, 令人印象深刻, 因此在這個階段, 協同設計室反而建議大家照單全收 Windows 10 的各項網路服務, 再過一段時間, 當大家都明確感受到 AI 人工智慧組態設定的貼心之後, 應該對於 Windows 10 緊密透過網路提供的各項置入性行銷, 就不會再有排拒之想了.</p>
+<h2>如何與還原卡共存</h2>
+<p>一旦決定與 Windows 10 的密集更新政策和好, 接下來電腦輔助設計室所面臨的問題是: 該如何與還原卡共存?</p>
+<p>理論上, 作為每一學年有將近千人入學的機械工程群, 在新生報到時直接發給一台完整裝載合法套件, 並且至少保用四年的 17 吋筆電, 應該是最理想的規劃, 因為如此, 每一門課都可以沉浸在數位整合環境之中 (意思是學生除了上課滑手機之餘, 還可以滑筆電:-), 只是事與願違, 這個理想與貼在四週牆上的"禁止使用非法軟體"標語一樣, 超級與現實脫節 (這一定是玩笑話了).</p>
+<p>在無法每位學員人手一台筆電的情況下, 幾乎每一時段都有兩門至四門的必修電腦課程時, 一個系所就必須維護大約 180 台 Windows 10, 總共四間 電腦教室, 而這些電腦都分別使用群準 EVOsys Pro v6 與 UEFI v8 還原卡, 因此接下來的議題是, 為數不少的 Windows 10 電腦該如何與還原卡共存?</p>
+<p>除了勤作網路拷貝之外, 目前還找不到答案, 大家不要忘記: 我們已經決定舉雙手, 完全接受微軟 Windows 10 操作系統的各種密集更新!</p>
+<h2>電腦分類</h2>
+<p>目前電腦輔助設計室所使用的還原卡為 Evo Pro v6, 採 MBR (Master Boot Record) 分割硬碟, 而協同設計室則使用 Evo UEFI v8, 採用 GPT (GUID Partition Table) 格式分割硬碟. 其中, 電腦輔助設計室的電腦皆為 client, 而協同設計室則有 client 與 Virtualbox 上的 Ubuntu 18.04 LTS (Long Term Support) Server + ubuntu-desktop.</p>
+<p>電腦輔助設計室共 65 台電腦的規格為: 華碩 Skylake MD790/I7-6700, Intel 第六代 Core i7/3.4GHz/8M CPU, 採用 Intel Q170 晶片組, 搭載 16GB DDR4/2133/288 Pin 記憶體 (8 GBx2), 2 TB-SATA3 硬碟, Asus MINI-GTX950-2G 顯示卡 (支援 PCIE 3.0, OpenGL 4.5, 768 個CUDA 核心數), 500瓦電源供應器, USB 3.1x2 (10GB/s) , USB 3.0x6 (5GB/s), USB 2.0x2 (480MB/s), 以及 群準的 EVOsys PRO v6 還原卡, 可同時支援 D-sub、HDMI 及 DisplayPort 三台獨立顯示器多工作業.</p>
+<p>這批華碩電腦在安裝群準的 EVOsys PRO v6 還原卡之前, 必須先將 Asus UEFI BIOS Utility 中 Boot 功能表下的 secure boot 中的 OS Type, 由內建的 Windows UTFI OS 改為 Other OS, 否則無法在開機後導引到 EVOsys PRO v6 還原卡功能選項.</p>
+<p>進入 EVOsys PRO v6 還原卡選項後, 以全新安裝分割硬碟, 一般 Windows 7 與 10 操作系統的資料類別為 A, Ubuntu 選 B, 而 swap 磁區則選擇 P, 分割完成後, 透過 EVOsys 所規劃的開機表單, 選擇 Windows 10 後按下 Enter, 可以進入該硬碟分隔磁區, 但是尚未安裝操作系統, 因此會出現無法開機提示, 這時以 Ctrl+Alt+Del 重新開機後, 可以透過 F8 導引到光碟機開機後進行 Windows 10 操作系統安裝, 這點與 EVOsys UEFI v8 版本功能有明顯差異, 因為 EVOsys UEFI v8 版本提供選擇開機表單中的操作系統選項後, 可以透過 Ctrl+i 執行操作系統安裝, 系統會直接導引到光碟機或 USB 開機選項.</p>
+<p>至於協同設計室中的 CD06 電腦充作伺服器使用, 實體操作系統為 Windows 10, 內部則有兩台 Virtualbox 虛擬 Ubuntu 18.04 server + ubuntu-desktop, 虛擬主機與 Windows 10 同步啟動服務採用 <a href="http://vboxvmservice.sourceforge.net/">vboxvmservice</a>, /etc/netplan 中 IPv6 固定 IP YAML 檔案設定如下:</p>
+<pre class="brush:jscript">
+network:
+    ethernets:
+        enp0s3:
+            addresses: 
+                - 2001:288:6004:17:0811::cd06/64
+            gateway6: 2001:288:6004:17::254
+            nameservers:
+                addresses:
+                    - 2001:b000:168::1
+
+    version: 2
+</pre>
+
+<h2>虛擬 Ubuntu 18.04 中的 Fossil SCM</h2>
+<p>Stunnel 與 Fossil SCM 安裝</p>
+<pre class="brush:jscript">
+sudo apt update
+sudo apt install stunnel4 -y
+sudo apt install fossil
+</pre>
+
+<p>環境變數與開機啟動設定</p>
+<pre class="brush:jscript">
+/etc/environment 設定:
+HTTPS=on
+/etc/default/stunnel4 檔案設定:
+ENABLED=1
+</pre>
+
+<p>Stunnel 設定並執行 fossil http 指令</p>
+<p>首先在 /etc/stunnel 目錄中建立 localhost.key 與 localhost.crt:</p>
+<p>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout localhost.key -out localhost.crt</p>
+<p>/etc/stunnel/stunnel.conf 設定檔案, 可同時支援 IPv4 與 IPv6 協定:</p>
+<pre class="brush:jscript">
+[https]
+accept = your_IPv4_ip:443
+accept = :::443
+cert = /etc/stunnel/localhost.crt
+key = /etc/stunnel/localhost.key
+exec = /usr/bin/fossil
+execargs = /usr/bin/fossil http /home/cdlab/repository/cdlab.fossil --https --nojail
+</pre>
+
+<p>其中 --nojail 目的在 drop the root privilege but do not enter the chroot jail</p>
+<p>重新啟動 stunnel4 則使用 /etc/init.d/stunnel4 restart</p>
+<p>建立 cdlab.fossil 則進入 /home/cdlab/repository 目錄後, 執行 fossil init cdlab.fossil</p>
+<p>上述設定完成後, 重新開機即可以 <a href="https://[2001:288:6004:17:0811::cd06]">https://[2001:288:6004:17:0811::cd06]</a> 連結至 cdlab.fossil 網際管理介面.</p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'mdecp2018'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'Collaborative-Design-Laboratory';
+                var disqus_url = 'https://mdecourse.github.io/python-course/blog/Collaborative-Design-Laboratory.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/2018-Edit-Blog-Markdown-Online.html">
+                            在 Github 線上編輯網誌
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/Collaborative-Design-Laboratory.html">
+                            協同設計室test
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/first-setup-blog.html">
+                            軟硬體設置
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="https://mdecourse.github.io/python-course/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Misc
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://mdecourse.github.io/python-course/blog/category/research.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Research
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="https://mdecourse.github.io/python-course/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="https://www.nature.com/" target="_blank">
+                Nature
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.sciencemag.org/" target="_blank">
+                Science
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.samharris.org/" target="_blank">
+                Sam Harris
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.ieu.uzh.ch/wagner/" target="_blank">
+                Andreas Wagner
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.americanscientist.org/" target="_blank">
+                American Scientist
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://www.scientificamerican.com/" target="_blank">
+                Scientific American
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="https://mdecourse.github.io/python-course/blog/theme/css/lity.css" rel="stylesheet">
+
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://mdecourse.github.io/python-course/blog/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'mdecp2018'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>

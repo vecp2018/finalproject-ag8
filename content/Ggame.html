@@ -1,0 +1,303 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Python-Course</title> <link rel="stylesheet" type="text/css" href="./../static/cmsimply.css">
+
+        <!-- for cnc -->
+        <link rel="stylesheet" type="text/css" href="./../static/cnc/bootstrap.min.css" />
+      <style>
+
+    .pane {
+      background-color: #f0f0f0;
+      border: 1px solid #d0d0d0;
+      margin-top: 20px;
+    }
+    .left10px {
+      padding-left: 10px;
+    }
+
+    .top10px {
+      padding-top: 10px;
+    }
+
+    .options {
+      border-bottom: 1px solid #a0a0a0;
+      padding-bottom:20px;
+      background: #a0a0a0;
+    }
+
+    .options .pane {
+      border: 1px solid #f0f0f0;
+    }
+  </style>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../static/syntaxhighlighter/shBrushCSharp.js"></script>
+<link type="text/css" rel="stylesheet" href="./../static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- for LaTeX equations -->
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+<!-- 暫時不用
+<script src="./../static/fengari-web.js"></script>
+<script type="text/javascript" src="./../static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.red3border {
+    border: 3px solid red;
+}
+.black3border {
+    border: 3px solid black;
+}
+</style>
+
+<script src="./../static/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("ul.topmenu> li:has(ul) > a").append('<div class="arrow-right"></div>');
+    $("ul.topmenu > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+});
+</script>
+
+</head><header><h1>2018 Fall vecp ag8 期末分組網站</h1> <confmenu>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sitemap.html">Site Map</a></li>
+<li><a href="./../reveal/index.html">reveal</a></li>
+<li><a href="./../blog/index.html">blog</a></li>
+
+</ul>
+</confmenu></header>
+<div class='container'><nav><ul id='css3menu1' class='topmenu'><li><a href='簡介.html'>簡介</a><li><a href='W9.html'>W9</a><li><a href='W10.html'>W10</a><li><a href='W11.html'>W11</a><li><a href='W12.html'>W12</a><li><a href='W13.html'>W13</a><li><a href='W14.html'>W14</a><li><a href='期末組員課程學習報告.html'>期末組員課程學習報告</a><ul><li><a href='40428405.html'>40428405</a><li><a href='40428436.html'>40428436</a><li><a href='40428439.html'>40428439</a><li><a href='40428445.html'>40428445</a><li><a href='40428448.html'>40428448</a><li><a href='40428459.html'>40428459</a></li></ul><li><a href='Python 安裝.html'>Python 安裝</a><li><a href='電腦硬體.html'>電腦硬體</a><li><a href='Python 語法.html'>Python 語法</a><li><a href='Math.html'>Math</a><li><a href='STL.html'>STL</a><li><a href='CNC.html'>CNC</a><li><a href='Brython.html'>Brython</a><ul><li><a href='Ggame.html'>Ggame</a><li><a href='GCS.html'>GCS</a><li><a href='Optimization.html'>Optimization</a></li></ul><li><a href='網際內容管理.html'>網際內容管理</a><li><a href='參考資料.html'>參考資料</a><li><a href='電子書.html'>電子書</a></li></ul></nav><section>Brython << <a href='Brython.html'>Previous</a> <a href='GCS.html'>Next</a> >> GCS<br /><h1>Ggame</h1>
+<p>為能在 canvas 模式下正確執行, 必須採用下列 sysdeps.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def module_exists(module_name):
+    try:
+        __import__(module_name)
+    except ImportError:
+        return False
+    else:
+        return True
+
+if module_exists('browser') and module_exists('javascript'):
+
+    from browser import window, document, load
+    from javascript import JSObject, JSConstructor
+
+    # pixi 與 buzz 模組, 改為在頁面載入時導入    
+  
+    major = window.__BRYTHON__.implementation[0]
+    minor = window.__BRYTHON__.implementation[1]
+    # brython 新版與 Javascript 程式庫結合運用方法
+    if major == 3 and minor &gt;= 3 or major &gt; 3:
+        GFX = window.PIXI
+        GFX_Rectangle = GFX.Rectangle.new
+        GFX_Texture = GFX.Texture.new
+        GFX_Texture_fromImage = GFX.Texture.fromImage.new
+        GFX_Sprite = GFX.Sprite.new
+        GFX_Graphics = GFX.Graphics.new()
+        GFX_Text = GFX.Text.new
+        GFX_NewStage = GFX.Container.new
+        SND = window.buzz
+        SND_Sound = SND.sound.new
+    else:
+        # 舊版 Brython 呼叫 Javascript 物件方法
+        GFX = JSObject(window.PIXI)
+        GFX_Rectangle = JSConstructor(GFX.Rectangle)
+        GFX_Texture = JSConstructor(GFX.Texture)
+        GFX_Texture_fromImage = JSConstructor(GFX.Texture.fromImage)
+        GFX_Sprite = JSConstructor(GFX.Sprite)
+        GFX_Graphics = JSConstructor(GFX.Graphics)()
+        GFX_Text = JSConstructor(GFX.Text)
+        GFX_NewStage = JSConstructor(GFX.Container)
+        SND = JSObject(window.buzz)
+        SND_Sound = JSConstructor(SND.sound)
+    GFX_DetectRenderer = GFX.autoDetectRenderer 
+  
+    class GFX_Window(object):
+        
+        def __init__(self, width, height, onclose):
+            canvas = window.document.getElementById('ggame-canvas')
+            if canvas:
+                '''
+                # 原始 Ggame 使用方法, 無法使用, 改為下列方式運用.
+                self._w = window
+                window.bsUI.graphicsmode()
+                options = {'transparent':True, 'antialias':True, 'view':canvas}
+                attachpoint = window.document.getElementById('graphics-column')
+                w, h = attachpoint.clientWidth, attachpoint.clientHeight
+                '''
+                self._w =window
+                w, h = self._w.innerWidth, self._w.innerHeight
+                options = {'transparent':True, 'antialias':True, 'view':canvas}
+                attachpoint = window.document.getElementById('graphics-column')
+            else:
+                #self._w = window.open("", "")
+                # 在頁面直接執行時, 不另開視窗頁面
+                self._w =window
+                w, h = self._w.innerWidth * 0.9, self._w.innerHeight * 0.9
+                options = {'transparent':True, 'antialias':True}
+                attachpoint = self._w.document.body
+            GFX.utils._saidHello = True; # ugly hack to block pixi banner
+            self._stage = GFX_NewStage()
+            self.width = width if width != 0 else int(w)
+            self.height = height if height != 0 else int(h)
+            self._renderer = GFX.autoDetectRenderer(self.width, self.height, options)
+            attachpoint.appendChild(self._renderer.view)
+            self._w.onunload = onclose
+      
+        def bind(self, evtspec, callback):
+            self._w.document.body.unbind(evtspec) # in case already bound
+            self._w.document.body.bind(evtspec, callback)
+
+        def unbind(self, evtspec):
+            self._w.document.body.unbind(evtspec)
+          
+        def add(self, obj):
+            self._stage.addChild(obj)
+          
+        def remove(self, obj):
+            self._stage.removeChild(obj)
+          
+        def animate(self, stepcallback):
+            self._renderer.render(self._stage)
+            self._w.requestAnimationFrame(stepcallback)
+          
+        def destroy(self):
+            SND.all().stop()
+            self._stage.destroy()
+  
+
+elif module_exists('pygame'):
+
+    try:
+        from ggame.pygamedeps import *
+    except ImportError:
+        from pygamedeps import *
+
+else:
+    try:
+        from ggame.headlessdeps import *
+    except ImportError:
+        from headlessdeps import *
+</pre>
+<p>在 CMSimfly 頁面執行方式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Ggame
+from ggame import App, ImageAsset, Sprite, MouseEvent
+from random import random, randint
+from browser import document as doc
+from browser import html
+import math
+# 建立內定名稱為 "ggame-canvas" 的 canvas 標註
+canvas = html.CANVAS(width = 600, height = 400)
+canvas.id = "ggame-canvas"
+brython_div = doc["brython_div"]
+brython_div &lt;= canvas
+# 建立名稱為 graphics-column 且 1x1 大小的 div 標註
+graphics_column = html.DIV(width = 1, height = 1)
+graphics_column.id = "graphics-column"
+brython_div &lt;= graphics_column
+
+class Bunny(Sprite):
+    
+    asset = ImageAsset("./.../../images/bunny.png")
+    
+    def __init__(self, position):
+        super().__init__(Bunny.asset, position)
+        # register mouse events
+        App.listenMouseEvent(MouseEvent.mousedown, self.mousedown)
+        App.listenMouseEvent(MouseEvent.mouseup, self.mouseup)
+        App.listenMouseEvent(MouseEvent.mousemove, self.mousemove)
+        self.dragging = True
+
+    
+    def step(self):
+        # Every now and then a bunny hops...
+        if random() &lt; 0.01:
+            self.x += randint(-20,20)
+            self.y += randint(-20,20)
+        
+        
+    def mousedown(self, event):
+        # capture any mouse down within 50 pixels
+        self.deltax = event.x - (self.x + self.width//2) 
+        self.deltay = event.y - (self.y + self.height//2)
+        if abs(self.deltax) &lt; 50 and abs(self.deltay) &lt; 50:
+            self.dragging = True
+            # only drag one bunny at a time - consume the event
+            event.consumed = True
+            
+    def mousemove(self, event):
+        if self.dragging:
+            self.x = event.x - self.deltax - self.width//2
+            self.y = event.y - self.deltay - self.height//2
+            event.consumed = True
+            
+    def mouseup(self, event):
+        if self.dragging:
+            self.dragging = False
+            event.consumed = True
+            
+        
+class DemoApp(App):
+    
+    def __init__(self):
+        super().__init__()
+        for i in range(5):
+            Bunny((randint(50, 600), randint(50, 400)))
+        
+    def step(self):
+        # Override step to perform action on each frame update
+        for bunny in self.spritelist:
+            bunny.step()
+
+
+# Create the app
+app = DemoApp()  
+# Run the app
+app.run()</pre>
+<p>GFX = window.PIXI<br/>GFX_Rectangle = GFX.Rectangle.new<br/>GFX_Texture = GFX.Texture.new<br/>GFX_Texture_fromImage = GFX.Texture.fromImage.new<br/>GFX_Sprite = GFX.Sprite.new<br/>GFX_Graphics = GFX.Graphics.new()<br/>GFX_Text = GFX.Text.new<br/>GFX_NewStage = GFX.Container.new<br/>SND = window.buzz<br/>SND_Sound = SND.sound.new</p>
+<p>class GFX_Window(object):</p>
+<p>def __init__(self, width, height, onclose):</p>
+<h4>app</h4>
+<p>App</p>
+<h4>sprite</h4>
+<p>Sprite</p>
+<h4>event</h4>
+<p>KeyEvent, MouseEvent</p>
+<h4>asset</h4>
+<p>ImageAsset, TextAsset, CircleAsset, RectangleAsset<br/>PolygonAsset, LineAsset, EllipseAsset<br/>Frame, Color, LineStyle</p>
+<h4>sound</h4>
+<p>SoundAsset, Sound</p><br />Brython << <a href='Brython.html'>Previous</a> <a href='GCS.html'>Next</a> >> GCS</section></div></body></html>
